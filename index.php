@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <!-- Nav Bar -->
+        <!-- Nav  Bar -->
         <header class="nav-bar">
             <?php include 'components/nav-bar.php'; ?>
         </header>
