@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --secondary-color: black;
+  --green: rgb(14, 197, 14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ----------------------------- Nav-Bar Styling ---------------------------- */
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  padding: 0 1.2em;
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+.brand-title.h1 {
+  font-size: clamp(2em, 2.5em, 3em);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 6px;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: clamp(20px, 2.7vw, 50px);
+  height: clamp(16px, 2vw, 20px);
+  cursor: pointer;
+}
+.menu .bar {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(236, 236, 236);
+  transition: 0.2s;
+}
+.change .bar-1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.change .bar-2 {
+  opacity: 0;
+}
+.change .bar-3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+}
+.nav-bar-links {
+  position: relative;
+  grid-column: 1 / span 2;
+  width: 100%;
+}
+.nav-bar-links ul {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 1px 1px 4px black;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.change.nav-bar ul {
+  opacity: 1;
+  visibility: visible;
+}
+.nav-bar-links ul li {
+  text-align: center;
+}
+.nav-bar-links ul li:hover {
+  background-color: white;
+}
+.nav-bar-links ul li:hover button {
+  color: black;
+}
+.nav-bar-links ul li button {
+  padding: 10px 0;
+  color: white;
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  font-size: 1em;
+}
+.nav-bar-links li#add-btn {
+  background-color: white;
+}
+.nav-bar-links #add-btn button {
+  color: var(--green);
+}
+
+/* ---------------------------------- Main ---------------------------------- */
+
+main {
+  overflow: hidden;
+}
+
+/* ------------------------------ Cards Styling ----------------------------- */
+
+#card-wrapper {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+  gap: 10px;
+}
+.card {
+  padding: 20px;
+}
+.card-img {
+  margin: 0 auto;
+  width: clamp(230px, 25%, 500px);
+  height: 300px;
+  cursor: pointer;
+}
+.card-img :hover {
+  box-shadow: 1px 1px 8px black;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: 1px 1px 4px black;
+}
+.card-name {
+  padding: 12px;
+  color: var(--secondary-color);
+}
+.card-name span {
+  text-align: center;
+  font-size: clamp(1.2em, 1.5em, 2em);
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+.card-info label {
+  letter-spacing: 2px;
+}
+.card-info label > span {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+i {
+  width: 25px;
+  text-align: left;
+  color: rgb(14, 197, 14);
+  cursor: pointer;
+}
+i:hover {
+  width: 25px;
+  text-align: left;
+  color: black;
+}
+.card-btn {
+  padding-top: 12px;
+}
+.card-btn button {
+  background-color: var(--green);
+  color: white;
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-size: 1em;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+.card-btn button:hover {
+  background-color: rgba(0, 0, 0, 0.89);
+}
+
+/* ----------------------------- Fetch More Btn ----------------------------- */
+
+#fetch-data {
+  padding: 20px 0;
+}
+#fetch-data i {
+  cursor: pointer;
+  color: black;
+}
+#fetch-data i:hover {
+  color: rgba(0, 0, 0, 0.89);
+}
+
+/* ----------------------------- Adopy Info Page ---------------------------- */
+
+#info-bg {
+  background: linear-gradient(to bottom right, rgb(248, 244, 244), #eee 10%, rgb(255, 255, 255, 0.1) 80%);
+  width: 100%;
+}
+.heading {
+  padding: 15px 0;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  color: rgb(34, 170, 34);
+}
+.card-info label {
+  padding: 4px 0;
+  font-weight: 700;
+}
+
+/* ----------------------------- Sign Up Styling ---------------------------- */
+
+.auth-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  /* use gimp for crop and opacity */
+}
+
+.form-box {
+  padding: 0;
+  width: clamp(280px, 50%, 400px);
+}
+.form-box .heading {
+  padding: 15px 0;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: white;
+}
+
+.form-box form input {
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  padding: 5px 12px;
+}
+
+.form-box form input:focus {
+  box-shadow: 0 0 4px white;
+  outline: none;
+}
+
+.form-item {
+  padding: 12px 0;
+}
+
+.center.form-item.sub-btn button {
+  background-color: white;
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.center.form-item.sub-btn button:hover {
+  background-color: lightgrey;
+}
+
+/* ------------------------------- Error Msg's ------------------------------ */
+
+.error-msg {
+  color: red;
+}
+
+/* --------------------------------- Footer --------------------------------- */
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 8px 0;
+}
+
+/* ----------------------------- Utility Classes ---------------------------- */
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}

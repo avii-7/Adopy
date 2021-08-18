@@ -1,0 +1,96 @@
+:root {
+  --spacer: 0.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Padding Classes */
+.p-1 {
+  padding: calc(var(--spacer) * 0.5);
+}
+.px-1 {
+  padding: 0 calc(var(--spacer) * 0.5);
+}
+.py-1 {
+  padding: calc(var(--spacer) * 0.5) 0;
+}
+.p-2 {
+  padding: var(--spacer);
+}
+.px-2 {
+  padding: 0 var(--spacer);
+}
+.py-2 {
+  padding: var(--spacer) 0;
+}
+.p-3 {
+  padding: calc(var(--spacer) * 2);
+}
+.px-3 {
+  padding: 0 calc(var(--spacer) * 2);
+}
+.py-3 {
+  padding: calc(var(--spacer) * 2) 0;
+}
+.p-4 {
+  padding: calc(var(--spacer) * 3);
+}
+.px-4 {
+  padding: 0 calc(var(--spacer) * 3);
+}
+.py-4 {
+  padding: calc(var(--spacer) * 3) 0;
+}
+.p-5 {
+  padding: calc(var(--spacer) * 4);
+}
+.px-5 {
+  padding: 0 calc(var(--spacer) * 4);
+}
+.py-5 {
+  padding: calc(var(--spacer) * 4) 0;
+}
+.p-6 {
+  padding: calc(var(--spacer) * 5);
+}
+.px-6 {
+  padding: 0 calc(var(--spacer) * 5);
+}
+.py-6 {
+  padding: calc(var(--spacer) * 5) 0;
+}
+.p-7 {
+  padding: calc(var(--spacer) * 6);
+}
+.px-7 {
+  padding: 0 calc(var(--spacer) * 6);
+}
+.py-7 {
+  padding: calc(var(--spacer) * 6) 0;
+}
+.p-8 {
+  padding: calc(var(--spacer) * 7);
+}
+.px-8 {
+  padding: 0 calc(var(--spacer) * 7);
+}
+.py-8 {
+  padding: calc(var(--spacer) * 7) 0;
+}
+.p-9 {
+  padding: calc(var(--spacer) * 8);
+}
+.px-9 {
+  padding: 0 calc(var(--spacer) * 8);
+}
+.py-9 {
+  padding: calc(var(--spacer) * 8) 0;
+}
+
+.center{
+  text-align: center;
+}

@@ -1,0 +1,62 @@
+/* auth-wrapper.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.image-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  /* use gimp for crop and opacity */
+}
+
+.form-box {
+  padding: 0 50px;
+}
+.form-box .heading {
+  padding: 15px 0;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: white;
+}
+
+.form-box form input:not([type="submit"]) {
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  padding: 5px 12px;
+}
+
+.form-box form input:focus {
+  box-shadow: 0 0 4px white;
+  outline: none;
+}
+
+.form-item {
+  padding: 12px 0;
+}
+
+.form-item.sub-btn input {
+  border: none;
+  background-color: white;
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-weight: 500;
+  cursor: pointer;
+}
+

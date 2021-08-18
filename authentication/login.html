@@ -1,0 +1,29 @@
+<div class="auth-wrapper">
+
+    <div class="image-box">
+        <img src="images/login-bg.jpg" alt="side-image">
+    </div>
+
+    <div class="form-box" onsubmit="return false;">
+        <header class="heading center ">
+            <span class="h1">Login</span>
+        </header>
+        <form name="check" onsubmit="return false;">
+            <div class="form-item ">
+                <input type="text" name="email" id="email" placeholder="Enter email here..." autofocus>
+            </div>
+            <div class="form-item ">
+                <input type="password" name="pwd" id="pwd" placeholder="Enter password here...">
+            </div>
+            <div class='center'>
+                <small class="error-msg"></small>
+            </div>
+            <div class="center form-item sub-btn ">
+                <button type="button" onclick="setData('login')">Log In</button>
+            </div>
+            <div class="center">
+                <!-- <span>Not yet registered ? <a onclick="loadData(2,()=>{})">Join Now</a> </span> -->
+            </div>
+        </form>
+    </div>
+</div>

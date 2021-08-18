@@ -1,0 +1,90 @@
+:root {
+  --secondary-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#card-wrapper {
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+  gap: 10px;
+}
+.card {
+  padding: 20px;
+}
+.card-img {
+  margin: 0 auto;
+  width: clamp(230px, 25%, 500px);
+  height: 300px;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.card-name {
+  padding: 12px;
+  color: var(--secondary-color);
+}
+.card-name span {
+  text-align: center;
+  font-size: clamp(1.2em, 1.5em, 2em);
+  font-weight: 500;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+.card-info label {
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+i {
+  width: 25px;
+  text-align: left;
+  color: var(--secondary-color);
+}
+.card-btn {
+  padding-top: 12px;
+}
+.card-btn a {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 4px 8px;
+  display: inline-block;
+}
+.card-btn a:hover {
+  background-color: rgba(0, 0, 0, 0.89);
+}
+
+.center {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+/* --------------------------------- Divider -------------------------------- */
+
+.heading {
+  padding: 15px 0;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-family: sans-serif;
+}
+.card-info label {
+  padding: 4px 0;
+  font-weight: 700;
+}
+.card-info label > span {
+  font-weight: 400;
+}
