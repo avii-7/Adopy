@@ -182,6 +182,7 @@ i:hover {
   display: inline-block;
   cursor: pointer;
   border: none;
+  margin-bottom: 15px;
 }
 .card-btn button:hover {
   background-color: rgba(0, 0, 0, 0.89);
@@ -203,7 +204,6 @@ i:hover {
 /* ----------------------------- Adopy Info Page ---------------------------- */
 
 #info-bg {
-  background: linear-gradient(to bottom right, rgb(248, 244, 244), #eee 10%, rgb(255, 255, 255, 0.1) 80%);
   width: 100%;
 }
 .heading {

@@ -1,4 +1,3 @@
-<?php include '../components/navbar.php' ?>
 <?php
 if (isset($_POST['submit'])) {
     include "../config/db_con.php";
@@ -12,18 +11,17 @@ if (isset($_POST['submit'])) {
     $city = $_POST['city'];
     $avail = 1;
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-    echo addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    // echo addslashes(file_get_contents($_FILES['image']['tmp_name']));
     $img_type = mime_content_type($_FILES['image']['tmp_name']);
 
-    
-    $query = "insert into animals (name, type, breed, age, gender, ownerId, state, city, available, image, img_type)
+
+    $query = "insert into animals (name, type, breed, age, gender, ownerId, state, city, avail, image, imageType)
      values('$name','$type','$breed',$age,'$gender',$ownerId,'$state','$city',$avail,'$image','$img_type');";
 
     // if ($con->query($query))  header('Location:../index.php');
     // else echo $con->error;
-    ($con->query($query)) ;
-    // else echo $con->error;
-
+    if ($con->query($query)) echo "done";
+    else echo $con->error;
 }
 ?>
 

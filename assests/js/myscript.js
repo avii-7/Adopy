@@ -5,53 +5,74 @@ const NAVBAR = document.querySelector(".nav-bar");
 const HEADER = document.getElementsByTagName("header")[0];
 const MAIN = document.getElementById("main");
 
+const wrapperStart = `<div id='card-wrapper'>`;
+const wrapperEnd = `</div>`;
+const fetchBtn = `<div class="center" id="fetch-data">
+                      <i class="fas fa-arrow-circle-down fa-2x" onclick="fetchPosts()"></i>
+                      </div>;`;
+
+const WrapperTemplate = (result) => {
+  return wrapperStart + result + wrapperEnd + fetchBtn;
+};
+
+async function getData(url, callback) {
+  const RESPONSE = await fetch(url);
+  const RESULT = await RESPONSE.text();
+  callback(RESULT);
+}
+
+function fetchPosts() {
+  getData(getURL(1), getPosts);
+}
+
+
+fetchPosts();
+
+function getURL(id) {
+  switch (id) {
+    case 1:
+      return "posts.php?offset=" + offset;
+    case 2:
+      return "authentication/signup.html";
+    case 3:
+      return "authentication/login.html";
+    case 4:
+      return "components/nav-bar.php";
+  }
+}
+
+function updateMain(RESULT) {
+  MAIN.innerHTML = RESULT;
+}
+
+function updateNavBar(RESULT) {
+  NAVBAR.innerHTML = RESULT;
+}
+
+function getPosts(result) {
+  if (offset == 0) {
+    result = WrapperTemplate(result);
+    updateMain(result);
+    WRAPPER = document.getElementById("card-wrapper");
+  } else {
+    WRAPPER.innerHTML += result;
+  }
+  offset += 3;
+}
+
+async function doit() {
+  await fetch(getURL(4));
+  getData(getURL(4), updateNavBar);
+}
+
 function openMenu() {
   NAVBAR.classList.toggle("change");
 }
 
-async function updateMenu() {
-  const RESPONSE = await fetch("components/nav-bar.php");
-  const RESULT = await RESPONSE.text();
-  NAVBAR.innerHTML = RESULT;
-}
-
-async function doit(action) {
-  await fetch(action);
-  updateMenu();
-  fetchData();
-}
-
-async function fetchData() {
-  if (offset == 0) {
-    MAIN.innerHTML = `<div id='card-wrapper'>`;
-    WRAPPER = document.getElementById("card-wrapper");
-  }
-  console.log("Yes");
-  const RESPONSE = await fetch("posts.php?offset=" + offset);
-  let result = await RESPONSE.text();
-  WRAPPER.innerHTML += result;
-  if (offset == 0) {
-    MAIN.innerHTML += `</div>
-    <div class="center" id="fetch-data">
-    <i class="fas fa-arrow-circle-down fa-2x" onclick="fetchData()"></i>
-    </div>`;
-  }
-  console.log(WRAPPER);
-  offset += 3;
-}
-
-fetchData();
-
 function home() {
   offset = 0;
   MAIN.innerHTML = "";
-  fetchData();
-}
-
-async function getData(page) {
-  const RESPONSE = await fetch(page);
-  const RESULT = await RESPONSE.text();
-  MAIN.innerHTML = RESULT;
+  fetchPosts();
 }
 
 async function setData(url) {
@@ -105,7 +126,7 @@ function genError(result) {
       ERROR_MSG[3].innerText = "Email is already registered.";
       break;
     case 13:
-      getData("authentication/login.html");
+      getData(getURL(3), updateMain);
       break;
     case 14:
       ERROR_MSG[0].innerText = "Please enter your email.";
@@ -121,8 +142,8 @@ function genError(result) {
       break;
     case 18:
       offset = 0;
-      updateMenu();
-      fetchData();
+      getData(getURL(4), updateNavBar);
+      fetchPosts();
       break;
   }
 }
