@@ -22,15 +22,10 @@ if ($result->num_rows != 0) { ?>
                     <label><i class="far fa-clock"></i><span><?php echo $row['post_date']; ?></span></label>
                 </div>
                 <div class="card-btn center">
-                    <button onclick="getData('pages/adopyinfo.php?id=<?php echo ($row['id']); ?>')">Adopt</button>
+                    <button onclick="getData('pages/adopyinfo.php?id=<?php echo ($row['id']); ?>',updateMain)">Adopt</button>
                 </div>
             </div>
         </div>
-        <!-- echo 1 for no more rows -->
     <?php } ?>
-    </div>
-
 <?php $con->close();
-} else {
-    echo (1);
 } ?>

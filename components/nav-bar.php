@@ -16,15 +16,15 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 </div>
 <nav class="nav-bar-links">
     <ul>
-        <li> <button onclick="home();">Home</button> </li>
-        <li> <button>Cat</button> </li>
-        <li> <button>Dog</button> </li>
+        <li> <button onclick="home();openMenu();">Home</button> </li>
+        <li> <button onclick="openMenu();">Cat</button> </li>
+        <li> <button onclick="openMenu();">Dog</button> </li>
         <?php if ($flag == true) { ?>
             <li> <button>My Profile</button> </li>
-            <li> <button onclick="doit('authentication/logout')">Logout</button> </li>
+            <li> <button onclick="doit();openMenu();">Logout</button> </li>
         <?php } else { ?>
-            <li> <button onclick="getData('authentication/signup.html')">Signup</button> </li>
-            <li> <button onclick="getData('authentication/login.html')">Login</button> </li>
+            <li> <button onclick="getData(getURL(2),updateMain);openMenu();" a>Signup</button> </li>
+            <li> <button onclick="getData(getURL(3),updateMain);openMenu();">Login</button> </li>
         <?php } ?>
         <li id="add-btn"><button class="add-adoby-btn" href="pages/addadopy.php"><i class="fas fa-plus"></i> Adopy</button> </li>
     </ul>
