@@ -64,7 +64,7 @@
   transition: opacity 0.5s;
   width: 100%;
   position: absolute;
-  z-index: 1;
+  z-index: 11;
   background-color: black;
   padding: 12px 0;
   display: flex;
@@ -106,12 +106,65 @@
 
 main {
   overflow: hidden;
+  padding-top: 60px;
+}
+
+/* --------------------------------- filter --------------------------------- */
+
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+}
+.dropbtn {
+  border: 2px solid lightgrey;
+  background-color: transparent;
+  color: black;
+  padding: 5px 8px;
+  font-size: 0.8em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.dropbtn i{
+  color: black;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.404);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #c7d4c7;
 }
 
 /* ------------------------------ Cards Styling ----------------------------- */
 
 #card-wrapper {
-  padding-top: 60px;
   display: grid;
   grid-template-columns: auto;
   place-items: center;

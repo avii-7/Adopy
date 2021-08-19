@@ -5,12 +5,6 @@ const NAVBAR = document.querySelector(".nav-bar");
 const HEADER = document.getElementsByTagName("header")[0];
 const MAIN = document.getElementById("main");
 
-const wrapperStart = `<div id='card-wrapper'>`;
-const wrapperEnd = `</div>`;
-const fetchBtn = `<div class="center" id="fetch-data">
-                      <i class="fas fa-arrow-circle-down fa-2x" onclick="fetchPosts()"></i>
-                      </div>;`;
-
 const WrapperTemplate = (result) => {
   return wrapperStart + result + wrapperEnd + fetchBtn;
 };
@@ -22,9 +16,14 @@ async function getData(url, callback) {
 }
 
 function fetchPosts() {
+  offset = 0;
+  getData(getURL(5), setWrapper);
   getData(getURL(1), getPosts);
 }
 
+const setWrapper = (RESULT) => {
+  MAIN.innerHTML = RESULT;
+};
 
 fetchPosts();
 
@@ -38,6 +37,8 @@ function getURL(id) {
       return "authentication/login.html";
     case 4:
       return "components/nav-bar.php";
+    case 5:
+      return "pages/home.html";
   }
 }
 
@@ -51,12 +52,9 @@ function updateNavBar(RESULT) {
 
 function getPosts(result) {
   if (offset == 0) {
-    result = WrapperTemplate(result);
-    updateMain(result);
     WRAPPER = document.getElementById("card-wrapper");
-  } else {
-    WRAPPER.innerHTML += result;
   }
+  WRAPPER.innerHTML += result;
   offset += 3;
 }
 
