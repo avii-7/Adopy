@@ -60,11 +60,11 @@
 }
 .nav-bar-links ul {
   opacity: 0;
+  z-index: 1;
   visibility: hidden;
   transition: opacity 0.5s;
   width: 100%;
   position: absolute;
-  z-index: 11;
   background-color: black;
   padding: 12px 0;
   display: flex;
@@ -106,60 +106,6 @@
 
 main {
   overflow: hidden;
-  padding-top: 60px;
-}
-
-/* --------------------------------- filter --------------------------------- */
-
-.filter {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 12px;
-}
-.dropbtn {
-  border: 2px solid lightgrey;
-  background-color: transparent;
-  color: black;
-  padding: 5px 8px;
-  font-size: 0.8em;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.dropbtn i{
-  color: black;
-}
-
-.dropdown {
-  position: relative;
-  z-index: 1;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.404);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #c7d4c7;
 }
 
 /* ------------------------------ Cards Styling ----------------------------- */
@@ -169,6 +115,7 @@ main {
   grid-template-columns: auto;
   place-items: center;
   gap: 10px;
+  padding-top: 80px;
 }
 .card {
   padding: 20px;
@@ -277,27 +224,10 @@ i:hover {
 .auth-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: black;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.image-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-  /* use gimp for crop and opacity */
 }
 
 .form-box {
@@ -309,18 +239,18 @@ i:hover {
   font-size: 2em;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: white;
+  color: black;
 }
 
 .form-box form input {
   width: 100%;
   border-radius: 12px;
-  border: none;
+  border: 1px solid lightgrey;
   padding: 5px 12px;
 }
 
 .form-box form input:focus {
-  box-shadow: 0 0 4px white;
+  box-shadow: 0 0 2px #778899;
   outline: none;
 }
 
@@ -329,8 +259,9 @@ i:hover {
 }
 
 .center.form-item.sub-btn button {
-  background-color: white;
+  background-color: transparent;
   padding: 5px 9px;
+  border: 1px solid #778899;
   border-radius: 7px;
   font-weight: 500;
   cursor: pointer;
@@ -340,6 +271,20 @@ i:hover {
   background-color: lightgrey;
 }
 
+.redirect {
+
+}
+
+.redirect span button {
+  font-size: 1em;
+  font-weight: 500;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.redirect span button:hover {
+  color: red;
+}
 /* ------------------------------- Error Msg's ------------------------------ */
 
 .error-msg {

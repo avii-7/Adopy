@@ -39,6 +39,8 @@ function getURL(id) {
       return "components/nav-bar.php";
     case 5:
       return "pages/home.html";
+    case 6:
+      return "authentication/logout.php";
   }
 }
 
@@ -59,7 +61,7 @@ function getPosts(result) {
 }
 
 async function doit() {
-  await fetch(getURL(4));
+  await fetch(getURL(6));
   getData(getURL(4), updateNavBar);
 }
 
@@ -79,6 +81,7 @@ async function setData(url) {
     body: new FormData(check),
   });
   const RESULT = await RESPONSE.text();
+  console.log(RESULT);
   genError(RESULT);
 }
 
@@ -139,6 +142,7 @@ function genError(result) {
       ERROR_MSG[0].innerText = "Invalid Credentials.";
       break;
     case 18:
+      console.log("eys");
       offset = 0;
       getData(getURL(4), updateNavBar);
       fetchPosts();

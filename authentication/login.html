@@ -1,9 +1,4 @@
 <div class="auth-wrapper">
-
-    <div class="image-box">
-        <img src="images/login-bg.jpg" alt="side-image">
-    </div>
-
     <div class="form-box" onsubmit="return false;">
         <header class="heading center ">
             <span class="h1">Login</span>
@@ -21,8 +16,9 @@
             <div class="center form-item sub-btn ">
                 <button type="button" onclick="setData('login')">Log In</button>
             </div>
-            <div class="center">
-                <!-- <span>Not yet registered ? <a onclick="loadData(2,()=>{})">Join Now</a> </span> -->
+            <div class="center redirect">
+                <span>Not yet registered ? <button onclick="getData(getURL(2),updateMain);"></button>Join Now</button>
+                </span>
             </div>
         </form>
     </div>
