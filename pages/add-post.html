@@ -1,0 +1,81 @@
+<div class="auth-wrapper">
+    <div class="form-box">
+        <div class="seven">
+            <h1>ADD ADOPY</h1>
+        </div>
+
+        <form name="check" onsubmit="return false;" enctype="multipart/form-data">
+            <!-- -------------------------------- Name --------------------------------- -->
+            <div class="form-item">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" placeholder="Enter her name...">
+            </div>
+
+            <!-- -------------------------------- Type --------------------------------- -->
+            <div class="form-item">
+                <label for="type">Type: </label>
+                <select name="type" id="type" >
+                    <option value="cat" selected>Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- -------------------------------- Breed -------------------------------- -->
+            <div class="form-item">
+                <label for="breed">Breed: </label>
+                <input type="text" name="breed" id="breed" placeholder="Enter her breed...">
+            </div>
+
+            <!-- --------------------------------- Age --------------------------------- -->
+            <div class="form-item">
+                <label for="age">Age: </label>
+                <input type="tel" name="age" id="age" maxlength="2" placeholder="Enter her age...">
+            </div>
+
+            <!-- ------------------------------- Gender -------------------------------- -->
+            <div class="form-item">
+                <label for="gender">Gender: </label>
+                <input type="radio" name='gender' value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name='gender' value="Female">
+                <label for="male">Female</label>
+            </div>
+
+            <!-- -------------------------------- State -------------------------------- -->
+            <div class="form-item">
+                <label for="state">State</label>
+                <select name="state" id="state">
+                    <option value="Haryana" selected>Haryana</option>
+                    <option value="Haryana">Maharastra</option>
+                    <option value="Haryana">Rajasthan</option>
+                    <option value="Haryana">Gujarat</option>
+                </select>
+            </div>
+
+            <!-- -------------------------------- City --------------------------------- -->
+            <div class="form-item">
+                <label for="city">City</label>
+                <select name="city" id="city">
+                    <option value="" selected disabled>Select city</option>
+                    <option value="Ambala">Ambala</option>
+                    <option value="Jagadhri">Jagadhri</option>
+                    <option value="Yamunanagar">Yamunanagar</option>
+                    <option value="Bahadurgarh">Bahadurgarh</option>
+                    <option value="Radaur">Radaur</option>
+                </select>
+            </div>
+
+            <!-- -------------------------------- Image -------------------------------- -->
+            <div class="form-item">
+                <label for="name">Image: </label>
+                <input type="file" accept="image/*" name="image" id="name">
+            </div>
+
+            <!-- ---------------------------- Submit Button ---------------------------- -->
+            <div class="btn">
+                <button onclick="setData('login')">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -41,6 +41,8 @@ function getURL(id) {
       return "pages/home.html";
     case 6:
       return "authentication/logout.php";
+    case 7:
+      return "pages/add-post.html";
   }
 }
 

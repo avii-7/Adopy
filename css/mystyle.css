@@ -15,7 +15,7 @@
 /* ----------------------------- Nav-Bar Styling ---------------------------- */
 
 .nav-bar {
-  position: fixed;
+  position: sticky;
   width: 100%;
   padding: 0 1.2em;
   display: grid;
@@ -115,7 +115,6 @@ main {
   grid-template-columns: auto;
   place-items: center;
   gap: 10px;
-  padding-top: 80px;
 }
 .card {
   padding: 20px;
@@ -214,16 +213,47 @@ i:hover {
   font-family: sans-serif;
   color: rgb(34, 170, 34);
 }
+
 .card-info label {
   padding: 4px 0;
   font-weight: 700;
 }
 
-/* ----------------------------- Sign Up Styling ---------------------------- */
+/* -------------------------------- Add Post -------------------------------- */
+
+.seven h1 {
+  padding: 20px 0;
+  font-size: 2em;
+  font-weight: 500;
+  color: black;
+  letter-spacing: 1px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 15px;
+  align-items: center;
+}
+
+h1 {
+  position: relative;
+  font-weight: 500;
+  font-size: 40px;
+  color: black;
+  transition: all 0.4s ease 0s;
+}
+
+.seven h1:after,
+.seven h1:before {
+  content: "";
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  height: 5px;
+}
+
+
+/* ----------------------------- form styling ---------------------------- */
 
 .auth-wrapper {
   width: 100%;
-  min-height: 100vh;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -269,10 +299,6 @@ i:hover {
 
 .center.form-item.sub-btn button:hover {
   background-color: lightgrey;
-}
-
-.redirect {
-
 }
 
 .redirect span button {

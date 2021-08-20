@@ -26,6 +26,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
             <li> <button onclick="getData(getURL(2),updateMain);openMenu();" a>Signup</button> </li>
             <li> <button onclick="getData(getURL(3),updateMain);openMenu();">Login</button> </li>
         <?php } ?>
-        <li id="add-btn"><button class="add-adoby-btn" href="pages/addadopy.php"><i class="fas fa-plus"></i> Adopy</button> </li>
+        <li id="add-btn"><button class="add-adoby-btn" onclick="getData(getURL(7),updateMain);openMenu();"><i class="fas fa-plus"></i> Adopy</button> </li>
     </ul>
 </nav>
