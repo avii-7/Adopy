@@ -87,11 +87,9 @@ function genError(RESULT) {
   ERROR_MSG = document.getElementsByClassName("error-msg");
   let phpError = document.getElementById("phpError");
   RESULT = parseInt(RESULT);
-  console.log(RESULT);
-  console.log(phpError);
   switch (RESULT) {
     case 1:
-      phpError.innerText = "Enter valid data in fields";
+      phpError.innerText = "Enter valid data in all fields";
       break;
     case 2:
       phpError.innerText = "Number is already registered.";
@@ -111,6 +109,10 @@ function genError(RESULT) {
     case 7:
       offset = 0;
       getData(getURL(4), updateNavBar);
+      fetchPosts();
+      break;
+    case 8:
+      offset = 0;
       fetchPosts();
       break;
   }
