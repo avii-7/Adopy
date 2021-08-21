@@ -3,7 +3,7 @@
     <img align="left" src="https://res.cloudinary.com/dyolrju8j/image/upload/v1629528664/white-logo_uck9ni.png" alt="Logo">
   </a>
 
-  <h1 align="left">Adopy [In development mode] <img align="center" src="https://media.giphy.com/media/pzvUEkOeAViy7VS7B6/giphy.gif" width="70"> </h1>
+  <h1 align="left">Adopy [ In development mode ] <img align="center" src="https://media.giphy.com/media/pzvUEkOeAViy7VS7B6/giphy.gif" width="70"> </h1>
 
 
   <p>
@@ -55,16 +55,18 @@ It is single page application which provides facility to login, signup, add post
 </p>
 
 ### Video [YouTube link]
-<p> >>> <a href="https://youtu.be/1EyHhC8Onv4"> View </a> <<< </p>
+<p> >>> <a target="_blank" href="https://youtu.be/1EyHhC8Onv4"> View </a> <<< </p>
 
 
-## Technologies Used
-<p id="technologies-used"></p>
-* HTML
-* CSS
-* JAVASCRIPT
-* PHP
-* MYSQL
+<h2 id="technologies-used">Technologies Used </h2>
+
+<ul>
+  <li> HTML 5 </li>
+  <li> CSS 3 </li>
+  <li> JavaScript </li>
+  <li> PHP </li>
+  <li? MySql </li>
+</ul>
 
 
 
