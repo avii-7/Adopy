@@ -1,13 +1,10 @@
 let offset = 0;
 let WRAPPER = null;
+let phpError = null;
 let ERROR_MSG = null;
 const NAVBAR = document.querySelector(".nav-bar");
 const HEADER = document.getElementsByTagName("header")[0];
 const MAIN = document.getElementById("main");
-
-const WrapperTemplate = (result) => {
-  return wrapperStart + result + wrapperEnd + fetchBtn;
-};
 
 async function getData(url, callback) {
   const RESPONSE = await fetch(url);
@@ -17,30 +14,38 @@ async function getData(url, callback) {
 
 function fetchPosts() {
   offset = 0;
-  getData(getURL(5), setWrapper);
-  getData(getURL(1), getPosts);
+  getData(getURL(5), setHome);
 }
 
-const setWrapper = (RESULT) => {
+const setHome = (RESULT) => {
   MAIN.innerHTML = RESULT;
+  getData(getURL(1), getPosts);
 };
+
+function getPosts(result) {
+  if (offset == 0) {
+    WRAPPER = document.getElementById("card-wrapper");
+  }
+  WRAPPER.innerHTML += result;
+  offset += 3;
+}
 
 fetchPosts();
 
 function getURL(id) {
   switch (id) {
     case 1:
-      return "posts.php?offset=" + offset;
+      return "php/posts.php?offset=" + offset;
     case 2:
-      return "authentication/signup.html";
+      return "pages/signup.html";
     case 3:
-      return "authentication/login.html";
+      return "pages/login.html";
     case 4:
       return "components/nav-bar.php";
     case 5:
       return "pages/home.html";
     case 6:
-      return "authentication/logout.php";
+      return "php/logout.php";
     case 7:
       return "pages/add-post.html";
   }
@@ -54,13 +59,6 @@ function updateNavBar(RESULT) {
   NAVBAR.innerHTML = RESULT;
 }
 
-function getPosts(result) {
-  if (offset == 0) {
-    WRAPPER = document.getElementById("card-wrapper");
-  }
-  WRAPPER.innerHTML += result;
-  offset += 3;
-}
 
 async function doit() {
   await fetch(getURL(6));
@@ -78,17 +76,17 @@ function home() {
 }
 
 async function setData(url) {
-  const RESPONSE = await fetch("authentication/" + url + ".php", {
+  const RESPONSE = await fetch("php/" + url + ".php", {
     method: "POST",
     body: new FormData(check),
   });
   const RESULT = await RESPONSE.text();
-  console.log(RESULT);
   genError(RESULT);
 }
 
 function genError(result) {
   ERROR_MSG = document.getElementsByClassName("error-msg");
+  phpError = document.getElementById("phpError");
   const intResult = parseInt(result);
   clearPrevErrors();
   switch (intResult) {
@@ -120,7 +118,7 @@ function genError(result) {
       ERROR_MSG[4].innerText = "Please enter your password.";
       break;
     case 10:
-      ERROR_MSG[4].innerText = "Password must be minumum 5 characters long.";
+      ERROR_MSG[4].innerText = "Please enter valid data.";
       break;
     case 11:
       ERROR_MSG[2].innerText = "Number is already registered.";
@@ -144,9 +142,14 @@ function genError(result) {
       ERROR_MSG[0].innerText = "Invalid Credentials.";
       break;
     case 18:
-      console.log("eys");
       offset = 0;
       getData(getURL(4), updateNavBar);
+      fetchPosts();
+      break;
+    case 20:
+      phpError.innerText = "Enter valid data";
+      break;
+    case 21:
       fetchPosts();
       break;
   }

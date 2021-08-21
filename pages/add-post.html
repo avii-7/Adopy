@@ -1,80 +1,91 @@
 <div class="auth-wrapper">
     <div class="form-box">
-        <div class="seven">
+        <div class="heading-1">
             <h1>ADD ADOPY</h1>
         </div>
 
         <form name="check" onsubmit="return false;" enctype="multipart/form-data">
             <!-- -------------------------------- Name --------------------------------- -->
-            <div class="form-item">
-                <label for="name">Name: </label>
+            <div class="form-item col-align">
+                <label for="name">Name :</label>
                 <input type="text" name="name" id="name" placeholder="Enter her name...">
+                <small class='error-msg'></small>
             </div>
 
             <!-- -------------------------------- Type --------------------------------- -->
-            <div class="form-item">
+            <div class="form-item col-align">
                 <label for="type">Type: </label>
-                <select name="type" id="type" >
-                    <option value="cat" selected>Cat</option>
-                    <option value="dog">Dog</option>
+                <select name="type" id="type">
+                    <option value="Cat" selected>Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Iguana">Iguana</option>
                     <option value="other">Other</option>
                 </select>
+                <small class='error-msg'></small>
             </div>
 
             <!-- -------------------------------- Breed -------------------------------- -->
-            <div class="form-item">
+            <div class="form-item col-align">
                 <label for="breed">Breed: </label>
                 <input type="text" name="breed" id="breed" placeholder="Enter her breed...">
+                <small class='error-msg'></small>
             </div>
 
+
             <!-- --------------------------------- Age --------------------------------- -->
-            <div class="form-item">
-                <label for="age">Age: </label>
+            <div class="form-item col-align">
+                <label for="age">Age :</label>
                 <input type="tel" name="age" id="age" maxlength="2" placeholder="Enter her age...">
+                <small class='error-msg'></small>
             </div>
 
             <!-- ------------------------------- Gender -------------------------------- -->
             <div class="form-item">
-                <label for="gender">Gender: </label>
-                <input type="radio" name='gender' value="Male">
+                <label for="gender">Gender :</label>
+                <input type="radio" name='gender' value="Male" checked>
                 <label for="male">Male</label>
                 <input type="radio" name='gender' value="Female">
                 <label for="male">Female</label>
+                <small class='error-msg'></small>
             </div>
 
             <!-- -------------------------------- State -------------------------------- -->
-            <div class="form-item">
-                <label for="state">State</label>
+            <div class="form-ite col-align">
+                <label for="state">State : </label>
                 <select name="state" id="state">
                     <option value="Haryana" selected>Haryana</option>
                     <option value="Haryana">Maharastra</option>
                     <option value="Haryana">Rajasthan</option>
                     <option value="Haryana">Gujarat</option>
                 </select>
+                <small class='error-msg'></small>
             </div>
 
             <!-- -------------------------------- City --------------------------------- -->
-            <div class="form-item">
-                <label for="city">City</label>
+            <div class="form-item col-align">
+                <label for="city">City :</label>
                 <select name="city" id="city">
-                    <option value="" selected disabled>Select city</option>
                     <option value="Ambala">Ambala</option>
                     <option value="Jagadhri">Jagadhri</option>
                     <option value="Yamunanagar">Yamunanagar</option>
                     <option value="Bahadurgarh">Bahadurgarh</option>
                     <option value="Radaur">Radaur</option>
                 </select>
+                <small class='error-msg'></small>
             </div>
 
             <!-- -------------------------------- Image -------------------------------- -->
-            <div class="form-item">
+            <div class="form-item col-align">
                 <label for="name">Image: </label>
                 <input type="file" accept="image/*" name="image" id="name">
+                <small class='error-msg'></small>
             </div>
 
             <!-- ---------------------------- Submit Button ---------------------------- -->
-            <div class="btn">
-                <button onclick="setData('login')">Add</button>
+            <small id='phpError'></small>
+            <div class="form-item sub-btn pb-3 btn center">
+                <button onclick="setData('add-post')">Add</button>
             </div>
         </form>
     </div>

@@ -12,6 +12,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.container {
+  min-height: 100vh;
+}
+
 /* ----------------------------- Nav-Bar Styling ---------------------------- */
 
 .nav-bar {
@@ -23,6 +27,7 @@
   place-items: center;
   justify-content: space-between;
   background-color: black;
+  z-index: 12;
 }
 .brand-title.h1 {
   font-size: clamp(2em, 2.5em, 3em);
@@ -75,14 +80,17 @@
   border-bottom-right-radius: 12px;
 }
 .change.nav-bar ul {
+  position: relative;
   opacity: 1;
   visibility: visible;
+  z-index: 1;
 }
 .nav-bar-links ul li {
   text-align: center;
 }
 .nav-bar-links ul li:hover {
   background-color: white;
+  border-radius: 30px;
 }
 .nav-bar-links ul li:hover button {
   color: black;
@@ -94,9 +102,6 @@
   display: inline-block;
   width: 100%;
   font-size: 1em;
-}
-.nav-bar-links li#add-btn {
-  background-color: white;
 }
 .nav-bar-links #add-btn button {
   color: var(--green);
@@ -113,7 +118,7 @@ main {
 #card-wrapper {
   display: grid;
   grid-template-columns: auto;
-  place-items: center;
+  align-items: center;
   gap: 10px;
 }
 .card {
@@ -205,14 +210,6 @@ i:hover {
 #info-bg {
   width: 100%;
 }
-.heading {
-  padding: 15px 0;
-  font-size: 2em;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-family: sans-serif;
-  color: rgb(34, 170, 34);
-}
 
 .card-info label {
   padding: 4px 0;
@@ -220,35 +217,6 @@ i:hover {
 }
 
 /* -------------------------------- Add Post -------------------------------- */
-
-.seven h1 {
-  padding: 20px 0;
-  font-size: 2em;
-  font-weight: 500;
-  color: black;
-  letter-spacing: 1px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-gap: 15px;
-  align-items: center;
-}
-
-h1 {
-  position: relative;
-  font-weight: 500;
-  font-size: 40px;
-  color: black;
-  transition: all 0.4s ease 0s;
-}
-
-.seven h1:after,
-.seven h1:before {
-  content: "";
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  height: 5px;
-}
-
 
 /* ----------------------------- form styling ---------------------------- */
 
@@ -258,25 +226,24 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .form-box {
   padding: 0;
   width: clamp(280px, 50%, 400px);
 }
-.form-box .heading {
-  padding: 15px 0;
-  font-size: 2em;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: black;
-}
 
-.form-box form input {
+.form-box form input:not([type="radio"]),
+select {
   width: 100%;
   border-radius: 12px;
   border: 1px solid lightgrey;
   padding: 5px 12px;
+}
+
+select:focus {
+  outline: none;
 }
 
 .form-box form input:focus {
@@ -289,6 +256,7 @@ h1 {
 }
 
 .center.form-item.sub-btn button {
+  min-width: 70px;
   background-color: transparent;
   padding: 5px 9px;
   border: 1px solid #778899;
@@ -301,6 +269,11 @@ h1 {
   background-color: lightgrey;
 }
 
+.redirect {
+  padding-top: 15px;
+  padding-bottom: 60px;
+}
+
 .redirect span button {
   font-size: 1em;
   font-weight: 500;
@@ -311,9 +284,16 @@ h1 {
 .redirect span button:hover {
   color: red;
 }
+
+.col-align {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ------------------------------- Error Msg's ------------------------------ */
 
-.error-msg {
+.error-msg,
+#phpError {
   color: red;
 }
 
@@ -342,4 +322,69 @@ ul {
 button {
   border: none;
   cursor: pointer;
+}
+
+.pb-3 {
+  padding-bottom: 40px;
+}
+
+/* --------------------------------- Heading -------------------------------- */
+
+.heading-1,
+.heading-2 {
+  padding-top: 40px;
+}
+
+h1 {
+  position: relative;
+}
+
+.heading-1 h1 {
+  font-weight: 500;
+  color: black;
+  letter-spacing: 1px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 13px;
+  align-items: center;
+}
+
+.heading-1 h1:after,
+.heading-1 h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid var(--green);
+  border-top: 1px solid var(--green);
+  height: 10px;
+  background-color: transparent;
+}
+
+.heading-2 h1 {
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: 160px;
+  text-align: center;
+  margin: auto;
+  white-space: nowrap;
+  padding-bottom: 13px;
+}
+.heading-2 h1:before {
+  background-color: var(--green);
+  content: "";
+  display: block;
+  height: 3px;
+  width: 75px;
+  margin-bottom: 5px;
+}
+.heading-2 h1:after {
+  background-color: var(--green);
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  width: 75px;
+  margin-bottom: 0.25em;
 }

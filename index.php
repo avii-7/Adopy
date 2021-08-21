@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1422ef591f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assests/css/mystyle.css">
+    <link rel="stylesheet" href="css/mystyle.css">
     <title>Adopy</title>
 </head>
 
@@ -24,7 +24,7 @@
         <?php include 'components/footer.php'; ?>
 
     </div>
-    <script src="assests/js/myscript.js"></script>
+    <script src="js/myscript.js"></script>
 </body>
 
 </html>

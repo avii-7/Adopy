@@ -1,5 +1,5 @@
 <?php
-require "config/db_con.php";
+require "../config/db_con.php";
 $offset = $_GET['offset'];
 $query = "SELECT * FROM animals WHERE avail=1 ORDER BY postDate DESC LIMIT $offset, 3";
 $result = $con->query($query);
@@ -22,7 +22,7 @@ if ($result->num_rows != 0) { ?>
                     <label><i class="far fa-clock"></i><span><?php echo $row['postDate']; ?></span></label>
                 </div>
                 <div class="card-btn center">
-                    <button onclick="getData('pages/adopyinfo.php?id=<?php echo ($row['id']); ?>',updateMain)">Adopt</button>
+                    <button onclick="getData('php/post-info.php?id=<?php echo ($row['id']); ?>',updateMain)">Adopt</button>
                 </div>
             </div>
         </div>
