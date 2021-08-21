@@ -44,9 +44,7 @@
 <!-- ABOUT THE PROJECT -->
 <h1 id="about-the-project" align="center">About The Project <img align="center" src="https://media.giphy.com/media/mTA0oR5zN08qA/giphy.gif" width="50"> </h1>
 
-It is single page application which provides facility to login, signup, add post, view post and many more without reloading the page. 
-<br />
-<br />
+It is a single page application built using only Vanilla JS [no framework or libraries] which provides the facility to login, signup, add posts, view posts and much more without reloading the page.
 
 <p align="center"> <h2 align="center"> Screenshots: </h2> </p>
 <br />
