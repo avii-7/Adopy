@@ -2,12 +2,10 @@
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
-    $pass = $_POST['pwd'];
+    $pass = $_POST['password'];
 
-    if (empty($email)) {
-        $error = 14;
-    } else if (empty($pass)) {
-        $error = 15;
+    if (empty($email) || empty($pass)) {
+        $error = 1;
     } else {
         require '../config/db_con.php';
         $query = "SELECT * FROM users WHERE email='$email';";
@@ -18,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['login'] = true;
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['name'] = $row['firstName'];
-                $error = 18;
-            } else $error = 17;
-        } else $error = 16;
+                $error = 7;
+            } else $error = 5;
+        } else $error = 6;
         $con->close();
     }
 }

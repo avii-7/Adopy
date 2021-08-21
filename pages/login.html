@@ -5,16 +5,19 @@
         </div>
         <form name="check" onsubmit="return false;">
             <div class="form-item ">
-                <input type="text" name="email" id="email" placeholder="Enter email here..." autofocus>
+                <input type="text" name="email" placeholder="Enter email here..." autofocus
+                    pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{3,}\.[A-Za-z]{2,}">
             </div>
+            <small class='error-msg'>Please enter a valid email.</small>
             <div class="form-item ">
-                <input type="password" name="pwd" id="pwd" placeholder="Enter password here...">
+                <input type="password" name="password" id="password" placeholder="Enter password here...">
             </div>
             <div class='center'>
-                <small class="error-msg"></small>
+                <small class="error-msg">Please enter your password.</small>
             </div>
+            <small id="phpError"></small>
             <div class="center form-item sub-btn ">
-                <button type="button" onclick="setData('login')">Log In</button>
+                <button type="button" onclick="validateLogin()">Log In</button>
             </div>
             <div class="center redirect form-item">
                 <span>Not registered yet? <button onclick="getData(getURL(2),updateMain);">Join Now</button></span>

@@ -59,7 +59,6 @@ function updateNavBar(RESULT) {
   NAVBAR.innerHTML = RESULT;
 }
 
-
 async function doit() {
   await fetch(getURL(6));
   getData(getURL(4), updateNavBar);
@@ -84,72 +83,34 @@ async function setData(url) {
   genError(RESULT);
 }
 
-function genError(result) {
+function genError(RESULT) {
   ERROR_MSG = document.getElementsByClassName("error-msg");
-  phpError = document.getElementById("phpError");
-  const intResult = parseInt(result);
-  clearPrevErrors();
-  switch (intResult) {
+  let phpError = document.getElementById("phpError");
+  RESULT = parseInt(RESULT);
+  console.log(RESULT);
+  console.log(phpError);
+  switch (RESULT) {
     case 1:
-      ERROR_MSG[0].innerText = "Please enter your first name.";
+      phpError.innerText = "Enter valid data in fields";
       break;
     case 2:
-      ERROR_MSG[0].innerText = "Only alphabets are allowed.";
+      phpError.innerText = "Number is already registered.";
       break;
     case 3:
-      ERROR_MSG[1].innerText = "Please enter the last name.";
+      phpError.innerText = "Email is already registered.";
       break;
     case 4:
-      ERROR_MSG[1].innerText = "Only alphabets are allowed.";
-      break;
-    case 5:
-      ERROR_MSG[2].innerText = "Please enter your phone number.";
-      break;
-    case 6:
-      ERROR_MSG[2].innerText = "Please enter a valid 10 digit number.";
-      break;
-    case 7:
-      ERROR_MSG[3].innerText = "Please enter your email.";
-      break;
-    case 8:
-      ERROR_MSG[3].innerText = "Please enter a valid email.";
-      break;
-    case 9:
-      ERROR_MSG[4].innerText = "Please enter your password.";
-      break;
-    case 10:
-      ERROR_MSG[4].innerText = "Please enter valid data.";
-      break;
-    case 11:
-      ERROR_MSG[2].innerText = "Number is already registered.";
-      break;
-    case 12:
-      ERROR_MSG[3].innerText = "Email is already registered.";
-      break;
-    case 13:
       getData(getURL(3), updateMain);
       break;
-    case 14:
-      ERROR_MSG[0].innerText = "Please enter your email.";
+    case 5:
+      phpError.innerText = "Invalid Credentials.";
       break;
-    case 15:
-      ERROR_MSG[0].innerText = "Please enter your password.";
+    case 6:
+      phpError.innerText = "Email is not registered.";
       break;
-    case 16:
-      ERROR_MSG[0].innerText = "Email is not registered.";
-      break;
-    case 17:
-      ERROR_MSG[0].innerText = "Invalid Credentials.";
-      break;
-    case 18:
+    case 7:
       offset = 0;
       getData(getURL(4), updateNavBar);
-      fetchPosts();
-      break;
-    case 20:
-      phpError.innerText = "Enter valid data";
-      break;
-    case 21:
       fetchPosts();
       break;
   }

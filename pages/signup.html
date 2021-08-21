@@ -5,31 +5,38 @@
         </div>
         <form name="check" onsubmit="return false;">
             <div class="form-item">
-                <input type="text" name="fname" id="fname" placeholder="Enter your your name...">
+                <input type="text" name="fname" id="fname" placeholder="Enter your your name..."
+                    pattern="[A-Za-z]{3,10}" minlength="3" maxlength="10">
             </div>
-            <small class='error-msg'></small>
+            <small class='error-msg'>First name should be 3 to 10 characters long.</small>
             <div class="form-item">
-                <input type="text" name="lname" id="lname" placeholder="Enter your lastname...">
+                <input type="text" name="lname" id="lname" placeholder="Enter your lastname..."
+                    pattern="[A-Za-z]{3,10}" minlength="3" maxlength="10">
             </div>
-            <small class='error-msg'></small>
+            <small class='error-msg'>Last name should be 3 to 10 character long.</small>
             <div class="form-item">
-                <input type="tel" name="number" id="number" placeholder="Enter your phone number...">
+                <input type="tel" name="number" id="number" placeholder="Enter your phone number..."
+                    pattern="\d{10}">
             </div>
-            <small class='error-msg'></small>
+            <small class='error-msg'>Enter a valid phone number.</small>
+
             <div class="form-item">
-                <input type="text" name="email" id="email" placeholder="Enter your email...">
+                <input type="text" name="email" id="email" placeholder="Enter your email..."
+                    pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{3,}\.[A-Za-z]{2,}">
             </div>
-            <small class='error-msg'></small>
+            <small class='error-msg'>Please enter a valid email.</small>
             <div class="form-item">
-                <input type="password" name="passwd" id="passwd" placeholder="Enter your password...">
+                <input type="password" name="passwd" id="passwd" placeholder="Enter your password..." pattern=".{5,}">
             </div>
-            <small class='error-msg'></small>
+            <small class='error-msg'>Password must be minimum 5 characters long.</small>
+            <small id="phpError"></small>
             <div class="center form-item sub-btn">
-                <button type="button" onclick="setData('signup')">Sign Up</button>
+                <button type="button" onclick="validateSignUp();">Sign Up</button>
+                <!-- <button type="button" onclick="setData('signup')">Sign Up</button> -->
             </div>
         </form>
         <div class="center redirect form-item">
-            <span>Already a user ? <button onclick="getData(getURL(3),updateMain)">LogIn Now</button></span>
+            <span>Already a user ? <button onclick="getData(getURL(3),updateMain);">LogIn Now</button></span>
         </div>
     </div>
 </div>

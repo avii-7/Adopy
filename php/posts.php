@@ -3,7 +3,6 @@ require "../config/db_con.php";
 $offset = $_GET['offset'];
 $query = "SELECT * FROM animals WHERE avail=1 ORDER BY postDate DESC LIMIT $offset, 3";
 $result = $con->query($query);
-//result contains an object...
 if ($result->num_rows != 0) { ?>
     <?php while ($row = $result->fetch_assoc()) { ?>
         <div class="card">

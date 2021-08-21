@@ -12,19 +12,21 @@
 
 <body>
     <div class="container">
-        <!-- Nav  Bar -->
+        <!-- ------------------------------- Nav Bar ------------------------------- -->
         <header class="nav-bar">
             <?php include 'components/nav-bar.php'; ?>
         </header>
 
+        <!-- ---------------------------- Main Content ----------------------------- -->
         <main id="main">
-
         </main>
 
+        <!-- ------------------------------- Footer -------------------------------- -->
         <?php include 'components/footer.php'; ?>
 
     </div>
     <script src="js/myscript.js"></script>
+    <script src="js/validate.js"></script>
 </body>
 
 </html>

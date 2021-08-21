@@ -238,7 +238,6 @@ i:hover {
 select {
   width: 100%;
   border-radius: 12px;
-  border: 1px solid lightgrey;
   padding: 5px 12px;
 }
 
@@ -292,9 +291,25 @@ select:focus {
 
 /* ------------------------------- Error Msg's ------------------------------ */
 
-.error-msg,
-#phpError {
+input:valid,
+textarea:valid {
+  border: 1px solid #777;
+  border-radius: 6px;
+}
+
+.error-msg {
+  display: none;
   color: red;
+}
+
+#phpError {
+  text-align: center;
+  color: red;
+}
+
+input:invalid {
+  border: 1px solid red;
+  border-radius: 6px;
 }
 
 /* --------------------------------- Footer --------------------------------- */
