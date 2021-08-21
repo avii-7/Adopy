@@ -52,7 +52,7 @@ It is single page application which provides facility to login, signup, add post
 </p>
 
 
-### Technologies Used
+## Technologies Used
 
 * HTML
 * CSS
