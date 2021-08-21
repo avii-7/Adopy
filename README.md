@@ -41,11 +41,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+It is single page application which provides facility to login, signup, add post, view post without reloading the page.
+The purpose of this application is to provide homes to needy animals.
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+<img align="center" src="https://res.cloudinary.com/dyolrju8j/image/upload/v1629539689/g_q62g3k.jpg" alt="Logo">
 
 
 ### Built With
