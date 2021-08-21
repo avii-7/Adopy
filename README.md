@@ -18,42 +18,48 @@
 </p>
 
 
-
 <!-- TABLE OF CONTENTS -->
 <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
 <ol>
   <li>
     <a href="#about-the-project">About The Project</a>
     <ul>
-      <li><a href="#technologies-used">Built With</a></li>
+      <li><a href="#technologies-used">Technology Used</a></li>
     </ul>
   </li>
   <li>
     <a href="#getting-started">Getting Started</a>
     <ul>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#installation">Installation</a></li>
+      <li>
+        <a href="#pre-req">Prerequisites</a>
+      </li>
+      <li>
+        <a href="#installation">Installation </a>
+      </li>
     </ul>
-  </li>
-  <li><a href="#usage">Usage</a></li>
-  <li><a href="#contact">Contact</a></li>
-  </ol>
+    </li>
+ </ol>
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+<h1 id="about-the-project" align="center">About The Project <img align="center" src="https://media.giphy.com/media/mTA0oR5zN08qA/giphy.gif" width="50"> </h1>
 
 It is single page application which provides facility to login, signup, add post, view post and many more without reloading the page. 
 <br />
 <br />
 
+<p align="center"> <h2 align="center"> Screenshots: </h2> </p>
+<br />
 <p align="center">
 <img align="center" src="https://res.cloudinary.com/dyolrju8j/image/upload/v1629540366/ss_qadrih.jpg" alt="Logo">
 </p>
 
+### Video [YouTube link]
+<p> >>> <a href="https://youtu.be/1EyHhC8Onv4"> View </a> <<< </p>
+
 
 ## Technologies Used
-
+<p id="technologies-used"></p>
 * HTML
 * CSS
 * JAVASCRIPT
@@ -63,9 +69,9 @@ It is single page application which provides facility to login, signup, add post
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+<h2 id="getting-started">Getting Started</h2>
 
-### Pre-Requisites:
+<h3 id="pre-req"> Pre-Requisites: </h3>
 
 1. Download and Install XAMPP
 
@@ -73,7 +79,7 @@ It is single page application which provides facility to login, signup, add post
 
 2. Install any Text Editor (Sublime Text or Visual Studio Code or Atom or Brackets)
 
-### Installtion
+<h3 id="installation"> Installtion</h3>
 
 1. Download as as Zip or Clone this project.
 2. Extract and Move this project to Root Directory.
