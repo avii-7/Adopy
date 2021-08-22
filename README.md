@@ -52,7 +52,7 @@ It is a single page application built using only Vanilla JS [no framework or lib
 <img align="center" src="https://res.cloudinary.com/dyolrju8j/image/upload/v1629540366/ss_qadrih.jpg" alt="Logo">
 </p>
 
-### Video [YouTube link]
+### Sample Video [YouTube link]
 <p> >>> <a target="_blank" href="https://youtu.be/1EyHhC8Onv4"> View </a> <<< </p>
 
 
