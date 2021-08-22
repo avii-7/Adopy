@@ -56,7 +56,7 @@ It is a single page application built using only Vanilla JS [no framework or lib
 <p> >>> <a target="_blank" href="https://youtu.be/1EyHhC8Onv4"> View </a> <<< </p>
 
 
-<h2 id="technologies-used">Technologies Used </h2>
+<h2 id="technologies-used">Technologies Used: </h2>
 
 <ul>
   <li> HTML 5 </li>
@@ -69,7 +69,7 @@ It is a single page application built using only Vanilla JS [no framework or lib
 
 
 <!-- GETTING STARTED -->
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="getting-started">Getting Started: </h2>
 
 <h3 id="pre-req"> Pre-Requisites: </h3>
 
