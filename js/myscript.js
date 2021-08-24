@@ -48,6 +48,8 @@ function getURL(id) {
       return "php/logout.php";
     case 7:
       return "pages/add-post.html";
+    case 8:
+      return "php/my-profile.php";
   }
 }
 

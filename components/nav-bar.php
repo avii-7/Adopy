@@ -20,7 +20,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         <li> <button onclick="openMenu();">Cat</button> </li>
         <li> <button onclick="openMenu();">Dog</button> </li>
         <?php if ($flag == true) { ?>
-            <li> <button>My Profile</button> </li>
+            <li> <button onclick="getData(getURL(8),updateMain);openMenu();">My Profile</button> </li>
             <li> <button onclick="doit();openMenu();">Logout</button> </li>
         <?php } else { ?>
             <li> <button onclick="getData(getURL(2),updateMain);openMenu();" a>Signup</button> </li>
