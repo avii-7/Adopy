@@ -3,11 +3,13 @@
     <img align="left" src="https://res.cloudinary.com/dyolrju8j/image/upload/v1629528664/white-logo_uck9ni.png" alt="Logo">
   </a>
 
-  <h1>Adopy</h1>
+  <h1 align="left">Adopy [ In development mode ] <img align="center" src="https://media.giphy.com/media/pzvUEkOeAViy7VS7B6/giphy.gif" width="70"> </h1>
+
 
   <p>
     Adopy stands for a animal which is available for adoption.
     So this is a adoption website in which users can view available adoptions posts and add new adoption too.
+    The purpose of this application is to provide homes to needy animals.
     <br />
     <a href="https://github.com/avii1999/Adopy"><strong>Explore the docs »</strong></a>
     <br />
@@ -16,138 +18,78 @@
 </p>
 
 
-
 <!-- TABLE OF CONTENTS -->
 <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
 <ol>
   <li>
     <a href="#about-the-project">About The Project</a>
     <ul>
-      <li><a href="#built-with">Built With</a></li>
+      <li><a href="#technologies-used">Technology Used</a></li>
     </ul>
   </li>
   <li>
     <a href="#getting-started">Getting Started</a>
     <ul>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#installation">Installation</a></li>
+      <li>
+        <a href="#pre-req">Prerequisites</a>
+      </li>
+      <li>
+        <a href="#installation">Installation </a>
+      </li>
     </ul>
-  </li>
-  <li><a href="#usage">Usage</a></li>
-  <li><a href="#contact">Contact</a></li>
-  </ol>
+    </li>
+ </ol>
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+<h1 id="about-the-project" align="center">About The Project <img align="center" src="https://media.giphy.com/media/mTA0oR5zN08qA/giphy.gif" width="50"> </h1>
 
-It is single page application which provides facility to login, signup, add post, view post without reloading the page.
-The purpose of this application is to provide homes to needy animals.
+It is a single page application built using only Vanilla JS [no framework or libraries] which provides the facility to login, signup, add posts, view posts and much more without reloading the page.
 
-<img align="center" src="https://res.cloudinary.com/dyolrju8j/image/upload/v1629539689/g_q62g3k.jpg" alt="Logo">
+<p align="center"> <h2 align="center"> Screenshots: </h2> </p>
+<br />
+<p align="center">
+<img align="center" src="https://res.cloudinary.com/dyolrju8j/image/upload/v1629540366/ss_qadrih.jpg" alt="Logo">
+</p>
+
+### Sample Video [YouTube link]
+<p> >>> <a target="_blank" href="https://youtu.be/1EyHhC8Onv4"> View </a> <<< </p>
 
 
-### Built With
+<h2 id="technologies-used">Technologies Used: </h2>
 
-* []()
-* []()
-* []()
+<ul>
+  <li> HTML 5 </li>
+  <li> CSS 3 </li>
+  <li> JavaScript </li>
+  <li> PHP </li>
+  <li? MySql </li>
+</ul>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+<h2 id="getting-started">Getting Started: </h2>
 
-To get a local copy up and running follow these simple steps.
+<h3 id="pre-req"> Pre-Requisites: </h3>
 
-### Prerequisites
+1. Download and Install XAMPP
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+[Click Here to Download](https://www.apachefriends.org/index.html)
 
-### Installation
+2. Install any Text Editor (Sublime Text or Visual Studio Code or Atom or Brackets)
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
+<h3 id="installation"> Installtion</h3>
 
+1. Download as as Zip or Clone this project.
+2. Extract and Move this project to Root Directory.
+```
+Local Disc C: -> xampp -> htdocs -> 'this project'
+```
+3. Open XAMPP Control Panel and Start 'Apache' and 'MySQL'.
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
+4. Extract and Import Database.
+5. Open 'phpmyadmin' in your browser.
+6. Create a Database ('adopy').
+7. Import the SQL file provided with this project ('adopy').
+8. Now, Open the project in your browser. It should run perfectly.
