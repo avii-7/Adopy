@@ -21,16 +21,17 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 <nav class="nav-bar-links">
     <ul>
         <li> <button onclick="fetchPosts();openMenu();">Home</button> </li>
-        <li> <button onclick="openMenu();">Cat</button> </li>
-        <li> <button onclick="openMenu();">Dog</button> </li>
+        <!-- <li> <button onclick="openMenu();">Cat</button> </li> -->
+        <!-- <li> <button onclick="openMenu();">Dog</button> </li> -->
         <?php if ($flag == true) { ?>
             <li> <button onclick="getData(getURL(8),updateMain);openMenu();">My Profile</button> </li>
             <li> <button onclick="doit();openMenu();">Logout</button> </li>
+            <li id="add-btn"><button class="add-adoby-btn" onclick="getData(getURL(7),updateMain);openMenu();"><i class="fas fa-plus"></i> Adopy</button> </li>
         <?php } else { ?>
             <li> <button onclick="getData(getURL(2),updateMain);openMenu();" a>Signup</button> </li>
             <li> <button onclick="getData(getURL(3),updateMain);openMenu();">Login</button> </li>
+            <li id="add-btn"><button class="add-adoby-btn" onclick="getData(getURL(3),updateMain);openMenu();"><i class="fas fa-plus"></i> Adopy</button> </li>
         <?php } ?>
-        <li id="add-btn"><button class="add-adoby-btn" onclick="getData(getURL(7),updateMain);openMenu();"><i class="fas fa-plus"></i> Adopy</button> </li>
     </ul>
 </nav>
 

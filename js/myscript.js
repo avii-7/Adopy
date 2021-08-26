@@ -7,25 +7,70 @@ const NAVBAR = document.querySelector(".nav-bar");
 const HEADER = document.getElementsByTagName("header")[0];
 const MAIN = document.getElementById("main");
 
+/* ----------------------------- Async Function ----------------------------- */
+
+// Get Data
+async function getData(url, callback) {
+  const RESPONSE = await fetch(url);
+  const RESULT = await RESPONSE.text();
+  callback(RESULT);
+}
+
+// Set Data
+async function setData(url) {
+  const RESPONSE = await fetch("php/" + url + ".php", {
+    method: "POST",
+    body: new FormData(check),
+  });
+  const RESULT = await RESPONSE.text();
+  action(RESULT);
+}
+
+// Logout
+async function doit() {
+  await fetch(getURL(6));
+  getData(getURL(4), updateNavBar);
+}
+
+/* ----------------------------- Home Page Setup ---------------------------- */
+
+fetchPosts();
+
+function setHome(RESULT) {
+  MAIN.innerHTML = RESULT;
+  WRAPPER = document.getElementById("card-wrapper");
+  getData(getURL(1), updateWrapper);
+}
+
+function fetchPosts() {
+  offset = 0;
+  getData(getURL(5), setHome);
+}
 
 /* ----------------------------- Other consts ---------------------------- =>*/
 
+// Check Authentication
+// function checkAuth(redirect) {
+//   if(result == false) getData(getURL(3),updateMain);
+//   else 
+// }
+
 // Updatation
-function updateMain (RESULT){
-  MAIN.innerHTML = RESULT;
-};
+function updateMain(RESULT) {
+  RESULT == 4 ? action(4) : (MAIN.innerHTML = RESULT);
+}
 
 function updateNavBar(RESULT) {
   NAVBAR.innerHTML = RESULT;
-};
+}
 
 function updateWrapper(result) {
   WRAPPER.innerHTML += result;
   offset += 3;
-};
+}
 
 // GetUrl
-function getURL(id){
+function getURL(id) {
   switch (id) {
     case 1:
       return "php/posts.php?offset=" + offset;
@@ -43,16 +88,18 @@ function getURL(id){
       return "pages/add-post.html";
     case 8:
       return "php/my-profile.php";
+    case 9:
+      return "php/check-auth.php";
   }
-};
+}
 
 // Open Menu
-function openMenu(){
+function openMenu() {
   NAVBAR.classList.toggle("change");
-};
+}
 
-// ServerSide ErrorMsg
-function genError(RESULT){
+// Redirect And Embbed Error
+function action(RESULT) {
   error_msg = document.getElementsByClassName("error-msg");
   let phpError = document.getElementById("phpError");
   RESULT = parseInt(RESULT);
@@ -84,48 +131,11 @@ function genError(RESULT){
       fetchPosts();
       break;
   }
-};
+}
 
 // Clear Previous Msg
- function clearPrevErrors(){
+function clearPrevErrors() {
   for (const msg of error_msg) {
     msg.innerText = "";
   }
-};
-
-/* ----------------------------- Home Page Setup ---------------------------- */
-
-fetchPosts();
-
-function setHome(RESULT) {
-  MAIN.innerHTML = RESULT;
-  WRAPPER = document.getElementById("card-wrapper");
-  getData(getURL(1), updateWrapper);
-};
-
- function fetchPosts(){
-  offset = 0;
-  getData(getURL(5), setHome);
-};
-/* ---------------------------- Get And Set Data ---------------------------- */
-
-async function getData(url, callback) {
-  const RESPONSE = await fetch(url);
-  const RESULT = await RESPONSE.text();
-  callback(RESULT);
-}
-
-async function setData(url) {
-  const RESPONSE = await fetch("php/" + url + ".php", {
-    method: "POST",
-    body: new FormData(check),
-  });
-  const RESULT = await RESPONSE.text();
-  genError(RESULT);
-}
-
-// Logout
-async function doit() {
-  await fetch(getURL(6));
-  getData(getURL(4), updateNavBar);
 }

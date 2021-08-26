@@ -1,10 +1,11 @@
 <?php
 session_start();
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     require "../config/db_con.php";
     $id = $_GET['id'];
     $query = "SELECT firstName,lastName,number,name,type,breed,age,gender,state,city,image,imageType,postDate FROM users JOIN animals on users.id = ownerId and animals.id=$id";
     $result = $con->query($query);
+    $con->close();
     $row = $result->fetch_assoc();
 ?>
     <div id="card-wrapper" class="info">
@@ -38,5 +39,4 @@ if (isset($_SESSION['login'])) {
             </div>
         </div>
     </div>
-<?php } else { ?>
-<?php } ?>
+<?php } else { echo 4; } ?>

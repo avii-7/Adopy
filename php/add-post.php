@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require "../config/db_con.php";
     $name = $_POST['name'];
@@ -6,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $breed = $_POST['breed'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $ownerId = 12;
+    $ownerId = $_SESSION['id'];
     $state = $_POST['state'];
     $city = $_POST['city'];
     $avail = 1;
