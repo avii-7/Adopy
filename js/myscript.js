@@ -49,12 +49,6 @@ function fetchPosts() {
 
 /* ----------------------------- Other consts ---------------------------- =>*/
 
-// Check Authentication
-// function checkAuth(redirect) {
-//   if(result == false) getData(getURL(3),updateMain);
-//   else 
-// }
-
 // Updatation
 function updateMain(RESULT) {
   RESULT == 4 ? action(4) : (MAIN.innerHTML = RESULT);
@@ -68,6 +62,7 @@ function updateWrapper(result) {
   WRAPPER.innerHTML += result;
   offset += 3;
 }
+/* --- x --- */
 
 // GetUrl
 function getURL(id) {
