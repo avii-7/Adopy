@@ -1,38 +1,31 @@
+/* ------------------------------- Declartions ------------------------------ */
 let offset = 0;
 let WRAPPER = null;
 let phpError = null;
-let ERROR_MSG = null;
+let error_msg = null;
 const NAVBAR = document.querySelector(".nav-bar");
 const HEADER = document.getElementsByTagName("header")[0];
 const MAIN = document.getElementById("main");
 
-async function getData(url, callback) {
-  const RESPONSE = await fetch(url);
-  const RESULT = await RESPONSE.text();
-  callback(RESULT);
-}
 
-function fetchPosts() {
-  offset = 0;
-  getData(getURL(5), setHome);
-}
+/* ----------------------------- Other consts ---------------------------- =>*/
 
-const setHome = (RESULT) => {
+// Updatation
+function updateMain (RESULT){
   MAIN.innerHTML = RESULT;
-  getData(getURL(1), getPosts);
 };
 
-function getPosts(result) {
-  if (offset == 0) {
-    WRAPPER = document.getElementById("card-wrapper");
-  }
+function updateNavBar(RESULT) {
+  NAVBAR.innerHTML = RESULT;
+};
+
+function updateWrapper(result) {
   WRAPPER.innerHTML += result;
   offset += 3;
-}
+};
 
-fetchPosts();
-
-function getURL(id) {
+// GetUrl
+function getURL(id){
   switch (id) {
     case 1:
       return "php/posts.php?offset=" + offset;
@@ -51,42 +44,16 @@ function getURL(id) {
     case 8:
       return "php/my-profile.php";
   }
-}
+};
 
-function updateMain(RESULT) {
-  MAIN.innerHTML = RESULT;
-}
-
-function updateNavBar(RESULT) {
-  NAVBAR.innerHTML = RESULT;
-}
-
-async function doit() {
-  await fetch(getURL(6));
-  getData(getURL(4), updateNavBar);
-}
-
-function openMenu() {
+// Open Menu
+function openMenu(){
   NAVBAR.classList.toggle("change");
-}
+};
 
-function home() {
-  offset = 0;
-  MAIN.innerHTML = "";
-  fetchPosts();
-}
-
-async function setData(url) {
-  const RESPONSE = await fetch("php/" + url + ".php", {
-    method: "POST",
-    body: new FormData(check),
-  });
-  const RESULT = await RESPONSE.text();
-  genError(RESULT);
-}
-
-function genError(RESULT) {
-  ERROR_MSG = document.getElementsByClassName("error-msg");
+// ServerSide ErrorMsg
+function genError(RESULT){
+  error_msg = document.getElementsByClassName("error-msg");
   let phpError = document.getElementById("phpError");
   RESULT = parseInt(RESULT);
   switch (RESULT) {
@@ -114,14 +81,51 @@ function genError(RESULT) {
       fetchPosts();
       break;
     case 8:
-      offset = 0;
       fetchPosts();
       break;
   }
-}
+};
 
-function clearPrevErrors() {
-  for (const msg of ERROR_MSG) {
+// Clear Previous Msg
+ function clearPrevErrors(){
+  for (const msg of error_msg) {
     msg.innerText = "";
   }
+};
+
+/* ----------------------------- Home Page Setup ---------------------------- */
+
+fetchPosts();
+
+function setHome(RESULT) {
+  MAIN.innerHTML = RESULT;
+  WRAPPER = document.getElementById("card-wrapper");
+  getData(getURL(1), updateWrapper);
+};
+
+ function fetchPosts(){
+  offset = 0;
+  getData(getURL(5), setHome);
+};
+/* ---------------------------- Get And Set Data ---------------------------- */
+
+async function getData(url, callback) {
+  const RESPONSE = await fetch(url);
+  const RESULT = await RESPONSE.text();
+  callback(RESULT);
+}
+
+async function setData(url) {
+  const RESPONSE = await fetch("php/" + url + ".php", {
+    method: "POST",
+    body: new FormData(check),
+  });
+  const RESULT = await RESPONSE.text();
+  genError(RESULT);
+}
+
+// Logout
+async function doit() {
+  await fetch(getURL(6));
+  getData(getURL(4), updateNavBar);
 }

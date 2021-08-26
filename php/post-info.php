@@ -33,7 +33,7 @@ if (isset($_SESSION['login'])) {
                     <label><i class="fas fa-phone-alt"></i>Contact number:<span> <?php echo $row['number']; ?></span></label>
                 </div>
                 <div class="card-btn center">
-                    <button onclick="home()">Home</button>
+                    <button onclick="fetchPosts();">Home</button>
                 </div>
             </div>
         </div>

@@ -7,8 +7,12 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 }
 ?>
 
+<!-- ---------------------------- NavBar Title ----------------------------- -->
 
 <span class="brand-title h1">ADOPY</span>
+
+<!-- --------------------------- NavBar Options ---------------------------- -->
+
 <div class="menu" onclick="openMenu()">
     <div class="bar bar-1"></div>
     <div class="bar bar-2"></div>
@@ -16,7 +20,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 </div>
 <nav class="nav-bar-links">
     <ul>
-        <li> <button onclick="home();openMenu();">Home</button> </li>
+        <li> <button onclick="fetchPosts();openMenu();">Home</button> </li>
         <li> <button onclick="openMenu();">Cat</button> </li>
         <li> <button onclick="openMenu();">Dog</button> </li>
         <?php if ($flag == true) { ?>
@@ -29,3 +33,5 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         <li id="add-btn"><button class="add-adoby-btn" onclick="getData(getURL(7),updateMain);openMenu();"><i class="fas fa-plus"></i> Adopy</button> </li>
     </ul>
 </nav>
+
+<!-- ---------------------------------- X ---------------------------------- -->

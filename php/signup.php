@@ -1,6 +1,5 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $error = 0;
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $number = $_POST['number'];

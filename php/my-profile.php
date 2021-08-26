@@ -1,8 +1,9 @@
 <?php
-require "config/db_con.php";
+require "../config/db_con.php";
 $id = 12;
-$query = "SELECT id,name,type,breed,age,gender,state,city FROM animals WHERE animals.$id=12";
+$query = "SELECT id,name,type,breed,age,gender,state,city,image,avail,imageType,postDate FROM animals WHERE ownerId=12";
 $result = $con->query($query);
+echo $con->error;
 if ($result->num_rows != 0) {
     while ($row = $result->fetch_assoc()) { ?>
         <div class="card">
