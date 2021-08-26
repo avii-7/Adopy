@@ -8,7 +8,7 @@
 
   <p>
     Adopy stands for a animal which is available for adoption.
-    So this is a adoption website in which users can view available adoptions posts and add new adoption too.
+    So this is a adoption website in which users can view available adoptions posts and add new adoptions.
     The purpose of this application is to provide homes to needy animals.
     <br />
     <a href="https://github.com/avii1999/Adopy"><strong>Explore the docs »</strong></a>
@@ -44,7 +44,7 @@
 <!-- ABOUT THE PROJECT -->
 <h1 id="about-the-project" align="center">About The Project <img align="center" src="https://media.giphy.com/media/mTA0oR5zN08qA/giphy.gif" width="50"> </h1>
 
-It is a single page application built using only Vanilla JS [no framework or libraries] which provides the facility to login, signup, add posts, view posts and much more without reloading the page.
+It is a single page application built using only Vanilla JS [no framework no libraries] which provides the facility to login, signup, add posts, view posts and much more without reloading the page.
 
 <p align="center"> <h2 align="center"> Screenshots: </h2> </p>
 <br />
@@ -53,7 +53,7 @@ It is a single page application built using only Vanilla JS [no framework or lib
 </p>
 
 ### Sample Video [YouTube link]
-<p> >>> <a target="_blank" href="https://youtu.be/1EyHhC8Onv4"> View </a> <<< </p>
+<p><a target="_blank" href="https://youtu.be/1EyHhC8Onv4"> Watch </a> </p>
 
 
 <h2 id="technologies-used">Technologies Used: </h2>
